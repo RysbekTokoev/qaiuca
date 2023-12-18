@@ -1,9 +1,11 @@
-import { defineConfig } from 'cypress'
+const { defineConfig } = require('cypress')
 
 
-export default defineConfig({
+module.exports = defineConfig({
     e2e: {
         baseUrl: 'http://167.114.201.175:5000/',
+        chromeWebSecurity: false,
+        supportFile: false,
       },
     env: {
         login: "default",
