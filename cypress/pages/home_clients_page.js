@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-class HomeClientsPage {
+export class HomeClientsPage {
     constructor() {
         // Table related locators
         this.tableAgeHeader = "";

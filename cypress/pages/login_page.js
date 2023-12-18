@@ -1,11 +1,11 @@
 /// <reference types='Cypress' />
 
 
-class LoginPage {
+export class LoginPage {
     constructor() {
-        this.loginField = "";
-        this.passwordField = "";
-        this.submitButton = "";
+        this.loginField = '[name="userName"]';
+        this.passwordField = '[name="password"]';
+        this.submitButton = "[type='submit']";
     }
     
     getLoginField() {
