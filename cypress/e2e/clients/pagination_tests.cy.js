@@ -1,9 +1,7 @@
 /// <reference types='Cypress' />
-import { LoginPage } from "../../pages/login_page"
 import { HomeClientsPage } from "../../pages/home_clients_page"
 import { login } from "../../support/login";
 
-var loginPage = new LoginPage();
 var homeClientsPage = new HomeClientsPage();
 
 // 1. Смена пагинации по стрелкам
@@ -33,14 +31,14 @@ describe("Pagination tests", ()=> {
         homeClientsPage.getTableAgeValues().invoke("text").then((ageBefore) => {
             // Click on arrow right
             homeClientsPage.getPaginationRightArrow().click();
-            cy.wait(500);
+            cy.wait(1000);
             
             // Check if table values changed
             homeClientsPage.getTableAgeValues().invoke("text").should('not.equal', ageBefore);
 
             // Click on arrow left
             homeClientsPage.getPaginationLeftArrow().click();
-            cy.wait(500);
+            cy.wait(1000);
             
             // Check if table values returned to the page 1s
             homeClientsPage.getTableAgeValues().invoke("text").should('equal', ageBefore);
